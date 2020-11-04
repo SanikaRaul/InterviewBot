@@ -30,7 +30,7 @@ const dialogflowFulfillment = (request, response) => {
      {
       result=result+1;
       console.log(result);
-      agent.add("Okay Cool we are done with the first question")
+      agent.add("Okay Cool we are done with the first question your current score is"+result)
 	 }
 	}
     let intentMap = new Map();
