@@ -18,9 +18,14 @@ const dialogflowFulfillment = (request, response) => {
     function sayHello(agent){
         agent.add("Hello, this response is coming from Heroku")
     }
+    function HR(agent)
+    {
+     agent.add("Okay so let us begin with the HR interview..Should we start with it?")
+	}
 
     let intentMap = new Map();
     intentMap.set("Default Welcome Intent", sayHello)
+     intentMap.set("HR", HR)
     agent.handleRequest(intentMap)
 
 }
