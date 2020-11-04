@@ -14,6 +14,7 @@ app.listen(port, () => {
 
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
+    var result=0;
 
     function sayHello(agent){
         agent.add("Hello, this response is coming from Heroku")
@@ -22,10 +23,19 @@ const dialogflowFulfillment = (request, response) => {
     {
      agent.add("Okay so let us begin with the HR interview..Should we start with it? say yes or no")
 	}
-
+    function apti1(agent)
+    {
+     const temp=agent.parameters.number;
+     if (temp==47)
+     {
+      result=result+1;
+      console.log(result);
+	 }
+	}
     let intentMap = new Map();
     intentMap.set("Default Welcome Intent", sayHello)
      intentMap.set("HR", HR)
+       intentMap.set("Aptitude1", apti1)
     agent.handleRequest(intentMap)
 
 }
