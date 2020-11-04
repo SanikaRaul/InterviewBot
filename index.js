@@ -20,7 +20,7 @@ const dialogflowFulfillment = (request, response) => {
     }
     function HR(agent)
     {
-     agent.add("Okay so let us begin with the HR interview..Should we start with it?")
+     agent.add("Okay so let us begin with the HR interview..Should we start with it? say yes or no")
 	}
 
     let intentMap = new Map();
