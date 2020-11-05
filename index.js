@@ -17,12 +17,9 @@ const dialogflowFulfillment = (request, response) => {
     var result=0;
 
     function sayHello(agent){
-        agent.add("Hello, this response is coming from Heroku")
+        agent.add("Hello folk,Should We begin with the Interview?")
     }
-    function HR(agent)
-    {
-     agent.add("Okay so let us begin with the HR interview..Should we start with it? say yes or no")
-	}
+   
     function apti1(agent)
     {
      const temp=agent.parameters.number;
@@ -30,13 +27,14 @@ const dialogflowFulfillment = (request, response) => {
      {
       result=result+1;
       console.log(result);
-      agent.add("Okay Cool we are done with the first question your current score is"+result)
+      agent.add("Okay Cool we are done with the first question your current score is noted!")
 	 }
+     agent.add("Okay Cool we are done with the first question your current is noted!")
+     agent.add("So the second question is blah blah")
 	}
     let intentMap = new Map();
     intentMap.set("Default Welcome Intent", sayHello)
-     intentMap.set("HR", HR)
-       intentMap.set("Aptitude1", apti1)
+    intentMap.set("Aptitude1", apti1)
     agent.handleRequest(intentMap)
 
 }
