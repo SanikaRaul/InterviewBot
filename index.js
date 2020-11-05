@@ -120,13 +120,14 @@ const dialogflowFulfillment = (request, response) => {
      {
       fresult=fresult+1
 	 }
-
+      console.log(fresult)
      function apti6(agent)
     {
      
      agent.add("Your Final score is"+fresult)
      
 	}
+   
 
 
 
