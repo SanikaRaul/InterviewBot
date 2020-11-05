@@ -49,6 +49,7 @@ const dialogflowFulfillment = (request, response) => {
       agent.add("Okay Cool we are done with the second question your current score is noted!")
       agent.add("Okay so let us move on to the third question !!There are 3 ants sitting on three corners of a triangle. All ants randomly pick a direction and start moving along edge of the triangle. What is the probability that any two ants collide?Hint: Every ant has two choices (pick either of two edges going through the corner on which ant is initially sitting)")
       agent.add("Give me the answer in fraction")
+      console.log(result)
 	 }
      else
      {
