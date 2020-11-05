@@ -89,11 +89,7 @@ const dialogflowFulfillment = (request, response) => {
           agent.add("What was the day on 15th august 1947?")
      
 	}
-
-
-     function apti6(agent)
-    {
-    var fresult=0;
+     var fresult=0;
      const temp=agent.parameters.number;
      const apt2=agent.parameters.apti2;
      const apt3=agent.parameters.apti3;
@@ -124,6 +120,10 @@ const dialogflowFulfillment = (request, response) => {
      {
       fresult=fresult+1
 	 }
+
+     function apti6(agent)
+    {
+     
      agent.add("Your Final score is"+fresult)
      
 	}
