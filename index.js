@@ -11,7 +11,7 @@ app.post('/dialogflow-fulfillment', (request, response) => {
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })
-
+var fresult=0;
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
     var result=0;
@@ -89,7 +89,7 @@ const dialogflowFulfillment = (request, response) => {
           agent.add("What was the day on 15th august 1947?")
      
 	}
-     var fresult=0;
+     
      const temp=agent.parameters.number;
      const apt2=agent.parameters.apti2;
      const apt3=agent.parameters.apti3;
@@ -121,6 +121,7 @@ const dialogflowFulfillment = (request, response) => {
       fresult=fresult+1
 	 }
       console.log(fresult)
+
      function apti6(agent)
     {
      
