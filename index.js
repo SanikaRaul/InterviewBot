@@ -48,7 +48,7 @@ const dialogflowFulfillment = (request, response) => {
          agent.add("Okay Cool we are done with the second question your current score is noted!")
 
          agent.add("Okay so let us move on to the third question !!Fresh fruit contains 68% water and dry fruit contains 20% water. How much dry fruit can be obtained from 100 kg of fresh fruits ?")
-      
+         agent.add(" Options are (A) 40 (B) 67 (C) 45 (D) 55")
  
 	}
 
@@ -109,7 +109,7 @@ const dialogflowFulfillment = (request, response) => {
      console.log(result)
      agent.add("Your Final score is "+temp)
      agent.add("So now you are done with the Aptitude section!!")
-     if(temp>=50)
+     if(temp<50)
      {
       agent.add("We are sorry to inform you that you didnt pass the aptitude section! Since your score is less than 50%")
       agent.add("We suggest you to practice more and attempt the aptitude section again!")
