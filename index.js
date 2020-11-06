@@ -100,9 +100,11 @@ const dialogflowFulfillment = (request, response) => {
          {
           result=result+1;
          }
-     result=(result/6)*100;
+
+     var temp=(result/6)*100;
+     console.log(temp)
      console.log(result)
-     agent.add("Your Final score is "+result)
+     agent.add("Your Final score is "+temp)
      
 	}
    
