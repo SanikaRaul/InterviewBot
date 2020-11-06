@@ -94,40 +94,13 @@ const dialogflowFulfillment = (request, response) => {
     
      function apti6(agent)
     {
-     const temp=agent.parameters.number;
-     const apt2=agent.parameters.apti2;
-     const apt3=agent.parameters.apti3;
-     const apt4=agent.parameters.apti4;
-     const apt5=agent.parameters.apti5;
+     
      const apt6=agent.parameters.apti6;
-     if (temp==47)
-     {
-      fresult=fresult+1
-	 }
-     if(apt2=='yes')
-     {
-      fresult=fresult+1
-	 }
-     if(apt3==40)
-     {
-      fresult=fresult+1
-	 }
-     if(apt4==122)
-     {
-      fresult=fresult+1
-	 }
-     if(apt5=='true' || apt5=='True' )
-     {
-      fresult=fresult+1
-	 }
-     if(apt6=='friday' || apt6=='Friday')
-     {
-      fresult=fresult+1
-      result=result+1
-	 }
-      console.log(fresult)
+      if (apt6=='Friday' || apt5=='friday')
+         {
+          result=result+1;
+         }
 
-     agent.add("Your Final score is"+fresult)
      agent.add("Your Final score is"+result)
      
 	}
