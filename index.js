@@ -12,9 +12,10 @@ app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })
 var fresult=0;
+var result=0;
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
-    var result=0;
+    
 
     function sayHello(agent)
     {
@@ -90,6 +91,9 @@ const dialogflowFulfillment = (request, response) => {
      
 	}
      
+    
+     function apti6(agent)
+    {
      const temp=agent.parameters.number;
      const apt2=agent.parameters.apti2;
      const apt3=agent.parameters.apti3;
@@ -119,13 +123,12 @@ const dialogflowFulfillment = (request, response) => {
      if(apt6=='friday' || apt6=='Friday')
      {
       fresult=fresult+1
+      result=result+1
 	 }
       console.log(fresult)
 
-     function apti6(agent)
-    {
-     
      agent.add("Your Final score is"+fresult)
+     agent.add("Your Final score is"+result)
      
 	}
    
