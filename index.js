@@ -108,8 +108,17 @@ const dialogflowFulfillment = (request, response) => {
      console.log(temp)
      console.log(result)
      agent.add("Your Final score is "+temp+"%")
-     
-	}
+     agent.add("So now you are done with the Aptitude section!!")
+     if(temp>=50)
+     {
+      agent.add("We are sorry to inform you that you didnt pass the aptitude section! Since your score is less than 50%")
+      agent.add("We suggest you to practice more and attempt the aptitude section again!")
+	 }
+     else
+     {
+     agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'Tech' to get started with the Technical Round")
+	 }
+    }
    
 
     let intentMap = new Map();
