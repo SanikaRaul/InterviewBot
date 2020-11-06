@@ -107,7 +107,7 @@ const dialogflowFulfillment = (request, response) => {
 
      console.log(temp)
      console.log(result)
-     agent.add("Your Final score is "+temp+"%")
+     agent.add("Your Final score is "+temp)
      agent.add("So now you are done with the Aptitude section!!")
      if(temp>=50)
      {
