@@ -96,7 +96,7 @@ const dialogflowFulfillment = (request, response) => {
     {
      
      const apt6=agent.parameters.apti6;
-      if (apt6=='Friday' || apt5=='friday')
+      if (apt6=='Friday' || apt6=='friday')
          {
           result=result+1;
          }
