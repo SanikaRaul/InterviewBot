@@ -13,6 +13,8 @@ app.listen(port, () => {
 })
 var fresult=0;
 var result=0;
+var lchoice="";
+var techresult=0;
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
     
@@ -121,7 +123,249 @@ const dialogflowFulfillment = (request, response) => {
 	 }
      result=0
     }
+
+
+   function tech1(agent)
+   {
+       lchoice=agent.parameters.tech1;
+       agent.add(`Okay cool!! Great to hear that you are interested in ${lchoice} .Let me ask you few questions related to ${lchoice}`)
+       if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+       {
+        agent.add("What will be the output of the following Python code snippet?")
+        agent.add(`def example(a):
+                            a = a + '2'
+                            a = a*2
+                            return a
+                   example("hello")`)
+                   agent.add(`  a) indentation Error
+                                b) cannot perform mathematical operation on strings
+                                c) hello2
+                                d) hello2hello2`)
+	   }
+         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+       {
+        agent.add("In which process, a local variable has the same name as one of the instance variables?")
+        agent.add(` Serialization
+                    Variable Shadowing
+                    Abstraction
+                    Multi-threading`)
+	   }
+       
+   }
+
+
+
+   function tech2(agent)
+   {
+       const tech2=agent.parameters.tech2;
+       agent.add("We are done with the first question!! Let us move on to the second question")
+       if (tech2 == "indentation Error")
+       {
+        techresult=techresult+1
+	   }
+        if (tech2 == "Variable Shadowing")
+       {
+        techresult=techresult+1
+	   }
+       
+        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+       {
+        agent.add(" What will be the output of the following Python code?")
+        agent.add(`x = 'abcd'
+                   for i in range(x):
+                        print(i)`)
+        agent.add(` a) a b c d
+                    b) 0 1 2 3
+                    c) error
+                    d) none of the mentioned`)
+	   }
+         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+       {
    
+        agent.add(`Given,
+
+                    int values[ ] = {1,2,3,4,5,6,7,8,9,10};  
+                    for(int i=0;i< Y; ++i)  
+                    System.out.println(values[i]);  
+                    Find the value of value[i]?
+`)
+ agent.add(`10
+            11
+            15
+            None of the above`)
+	   }
+       
+   }
+
+
+   function tech3(agent)
+   {
+       const tech3=agent.parameters.tech3;
+       agent.add("We are done with the second question!! Let us move on to the third question")
+       if (tech3 == "Error" ||  tech3 == "error")
+       {
+        techresult=techresult+1
+	   }
+        if (tech3 == "None of the above" )
+       {
+        techresult=techresult+1
+	   }
+       
+        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+       {
+        agent.add(" What will be the output of the following Python code?")
+        agent.add(`x = [[0], [1]]
+                   print(len(' '.join(list(map(str, x)))))`)
+        agent.add(` a) 2
+                    b) 3
+                    c) 7
+                    d) 8`)
+	   }
+         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+       {
+       
+        agent.add(` Predict the output of following Java Programs.
+
+
+
+                public class Calculator 
+                { 
+                    int num = 100; 
+                    public void calc(int num)  { this.num = num * 10;  } 
+                    public void printNum()     { System.out.println(num); } 
+  
+                    public static void main(String[] args) 
+                    { 
+                        Calculator obj = new Calculator(); 
+                        obj.calc(2); 
+                        obj.printNum(); 
+                    } 
+                } `)
+
+         agent.add(`Options :
+                            A) 20
+                            B) 100
+                            C) 1000
+                            D) 2`)
+	   }
+       
+   }
+
+
+
+
+    function tech4(agent)
+   {
+       const tech4=agent.parameters.tech4;
+       agent.add("We are done with the third question!! Let us move on to the forth question")
+       if (tech4 == 7 ||  tech4 == 7)
+       {
+        techresult=techresult+1
+	   }
+       if (tech4 == 20)
+       {
+        techresult=techresult+1
+	   }
+       
+        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+       {
+        agent.add(" What will be the output of the following Python code?")
+        agent.add(`def func(x, ans):
+                           if(x==0):
+                              return 0
+                           else: 
+                              return func(x-1, x+ans) 
+                   print(func(2,0))`)
+        agent.add(` a) 0
+                    b) 1
+                    c) 2
+                    d) 3`)
+	   }
+         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+       {
+    
+        agent.add("Multiple inheritances is not supported in case of class but it is supported in case of interface.")
+        agent.add("True or False?")
+	   }
+       
+   }
+
+
+
+
+
+    function tech5(agent)
+   {
+       const tech5=agent.parameters.tech5;
+       agent.add("We are done with the forth question!! Let us move on to the fifth question")
+       if (tech5 == 0)
+       {
+        techresult=techresult+1
+	   }
+       if (tech5 == "True" || tech5 == "true")
+       {
+        techresult=techresult+1
+	   }
+       
+        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+       {
+        agent.add(`How many keyword arguments can be passed to a function in a single function call?`)
+        agent.add(` a) zero
+                    b) zero or more
+                    c) one
+                    d) one or more`)
+	   }
+         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+       {
+        agent.add("What is it called if an object has its own lifecycle and there is no owner?")
+        agent.add(`a) Aggregation
+                    b) Composition
+                    c) Encapsulation
+                    d) Association`)
+	   }
+       
+   }
+
+
+   function tech6(agent)
+   {
+       const tech6=agent.parameters.tech6;
+       agent.add("We are done with the fifth question!! ")
+       if (tech6 == "zero or more")
+       {
+        techresult=techresult+1
+	   }
+       if (tech6 == "Association" ||  tech6 == "association")
+       {
+        techresult=techresult+1
+	   }
+     var tem=parseInt((techresult/5)*100);
+     var t = tem.toString();
+     console.log(t)
+     console.log(techresult)
+     agent.add(`Your Final score is ${t}`)
+ 
+     agent.add("So now you are done with the Technical Round!!")
+     if(tem<50)
+     {
+      agent.add("We are sorry to inform you that you didnt pass the Technical Round! Since your score is less than 50%")
+      agent.add("We suggest you to practice more and attempt the Technical Section again!")
+	 }
+     else
+     {
+     agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'HR' to get started with the HR Round")
+	 }
+     techresult=0
+       
+       
+   }
+
+
+
+
+
+
+
 
     let intentMap = new Map();
     intentMap.set("Default Welcome Intent", sayHello)
@@ -131,6 +375,15 @@ const dialogflowFulfillment = (request, response) => {
     intentMap.set("Aptitude4", apti4)
     intentMap.set("Aptitude5", apti5)
     intentMap.set("Aptitude6", apti6)
+
+
+     intentMap.set("Technical1", tech1)
+     intentMap.set("Technical2", tech2)
+     intentMap.set("Technical3", tech3)
+     intentMap.set("Technical4", tech4)
+     intentMap.set("Technical5", tech5)
+     intentMap.set("Technical6", tech6)
+     
     agent.handleRequest(intentMap)
 
 }
