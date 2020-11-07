@@ -142,7 +142,7 @@ const dialogflowFulfillment = (request, response) => {
                                 c) hello2
                                 d) hello2hello2`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
        {
         agent.add("In which process, a local variable has the same name as one of the instance variables?")
         agent.add(` Serialization
