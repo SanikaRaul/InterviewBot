@@ -104,10 +104,10 @@ const dialogflowFulfillment = (request, response) => {
          }
 
      var temp=parseInt((result/6)*100);
-
-     console.log(temp)
+     var n = temp.toString();
+     console.log(n)
      console.log(result)
-     agent.add("Your Final score is ")
+     agent.add("Your Final score is n")
      agent.add(temp)
      agent.add("So now you are done with the Aptitude section!!")
      if(temp<50)
