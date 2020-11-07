@@ -179,7 +179,7 @@ const dialogflowFulfillment = (request, response) => {
                     c) error
                     d) none of the mentioned`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
        {
    
         agent.add(`Given,
@@ -221,7 +221,7 @@ const dialogflowFulfillment = (request, response) => {
                     c) 7
                     d) 8`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
        {
        
         agent.add(` Predict the output of following Java Programs.
@@ -281,7 +281,7 @@ const dialogflowFulfillment = (request, response) => {
                     c) 2
                     d) 3`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
        {
     
         agent.add("Multiple inheritances is not supported in case of class but it is supported in case of interface.")
@@ -315,7 +315,7 @@ const dialogflowFulfillment = (request, response) => {
                     c) one
                     d) one or more`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice="JAVA")
+         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
        {
         agent.add("What is it called if an object has its own lifecycle and there is no owner?")
         agent.add(`a) Aggregation
