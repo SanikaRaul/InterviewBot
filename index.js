@@ -339,7 +339,73 @@ const dialogflowFulfillment = (request, response) => {
        {
         techresult=techresult+1
 	   }
-     var tem=parseInt((techresult/5)*100);
+
+
+       agent.add("It was nice to inteview you regarding the language you are comfortable with!")
+       agent.add("Now let me ask you few of the SQL related questions!")
+       agent.add("Q)Which is not DDL (data definition language) operation")
+       agent.add("A.Renaming a table\nB.SQL create table\nC.Add a column to an existing table\nD.Update data into a table in SQL database")
+
+
+
+       
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   function tech7(agent)
+   {
+       const tech7=agent.parameters.tech7;
+       agent.add("We are done with the sixth question!! Let us move on to the seventh question")
+      
+       if (tech7 == "D" || tech7=="d")
+       {
+        techresult=techresult+1
+	   }
+      
+       agent.add("Q) Which statement is wrong about PRIMARY KEY constraint in SQL?")
+       agent.add("A.The PRIMARY KEY uniquely identifies each record in a SQL database table\nB.Primary key can be made based on multiple columns\nC.Primary key must be made of any single columns\nD.Primary keys must contain UNIQUE values.")
+  
+   }
+
+   
+   function tech8(agent)
+   {
+       const tech8=agent.parameters.tech8;
+       agent.add("We are done with the sixth question!! Let us move on to the seventh question")
+      
+       if (tech8 == "C" || tech8=="c")
+       {
+        techresult=techresult+1
+	   }
+      
+       agent.add("Q)  SQL Select statement to retrieve unique record from a table is")
+       agent.add("A.SELECT DISTINCT\nB.SELECT UNIQUE\nC.SELECT UNION\nD.SELECT UNION ALL")
+  
+   }
+
+      
+   function tech9(agent)
+   {
+       const tech9=agent.parameters.tech9;
+       agent.add("We are done with the sixth question!! Let us move on to the seventh question")
+      
+       if (tech9 == "A" || tech9=="a")
+       {
+        techresult=techresult+1
+	   }
+      
+     var tem=parseInt((techresult/8)*100);
      var t = tem.toString();
      console.log(t)
      console.log(techresult)
@@ -355,9 +421,7 @@ const dialogflowFulfillment = (request, response) => {
      {
      agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'HR' to get started with the HR Round")
 	 }
-     techresult=0
-       
-       
+     techresult=0 
    }
 
 
@@ -383,6 +447,9 @@ const dialogflowFulfillment = (request, response) => {
      intentMap.set("Technical4", tech4)
      intentMap.set("Technical5", tech5)
      intentMap.set("Technical6", tech6)
+     intentMap.set("Technical7", tech7)
+     intentMap.set("Technical8", tech8)
+     intentMap.set("Technical9", tech9)
      
     agent.handleRequest(intentMap)
 
