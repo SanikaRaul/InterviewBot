@@ -382,7 +382,7 @@ const dialogflowFulfillment = (request, response) => {
    function tech8(agent)
    {
        const tech8=agent.parameters.tech8;
-       agent.add("We are done with the sixth question!! Let us move on to the seventh question")
+       agent.add("We are done with the seventh question!! Let us move on to the eightth question")
       
        if (tech8 == "C" || tech8=="c")
        {
@@ -398,7 +398,7 @@ const dialogflowFulfillment = (request, response) => {
    function tech9(agent)
    {
        const tech9=agent.parameters.tech9;
-       agent.add("We are done with the sixth question!! Let us move on to the seventh question")
+       agent.add("We are done with the eighth question!! ")
       
        if (tech9 == "A" || tech9=="a")
        {
