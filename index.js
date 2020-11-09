@@ -21,7 +21,7 @@ const dialogflowFulfillment = (request, response) => {
 
     function sayHello(agent)
     {
-        agent.add("Hello folk,Should We begin with the Interview?")
+        agent.add("Hello candidate!!Should We begin with the Interview?")
     }
    
     function apti1(agent)
@@ -416,15 +416,18 @@ const dialogflowFulfillment = (request, response) => {
      {
       agent.add("We are sorry to inform you that you didnt pass the Technical Round! Since your score is less than 50%")
       agent.add("We suggest you to practice more and attempt the Technical Section again!")
+      techresult=0 
 	 }
      else
      {
      agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'HR' to get started with the HR Round")
-	 }
      techresult=0 
+	 }
+     
    }
 
-
+  
+    
 
 
 
