@@ -41,7 +41,7 @@ const dialogflowFulfillment = (request, response) => {
     function apti1(agent)
     {
          const temp=agent.parameters.number;
-         const question="";
+         var question="";
          if (temp==47)
          {
           result=result+1;
