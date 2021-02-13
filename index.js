@@ -49,10 +49,9 @@ const dialogflowFulfillment = (request, response) => {
 
         db.get("SELECT question , options, answer FROM questions", (error, row) => {
          console.log(row.question +""+ row.options +""+ row.answer);
-       q=row.question;
-       console.log(q);
+           agent.add(`first question coming from db is ${row.question}`)
           });
-          agent.add(`first question coming from db is ${q}`)
+          
 
      
          agent.add("Okay Cool we are done with the first question your current score is noted!")
