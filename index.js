@@ -55,7 +55,7 @@ const dialogflowFulfillment = (request, response) => {
            console.log(question);
           });
           
-
+          console.log(question);
          agent.add(` this is the first question from db ${question}`)
          agent.add("Okay Cool we are done with the first question your current score is noted!")
 
