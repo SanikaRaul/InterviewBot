@@ -28,7 +28,7 @@ var fresult=0;
 var result=0;
 var lchoice="";
 var techresult=0;
-var temp="";
+var q="";
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
     
@@ -49,10 +49,10 @@ const dialogflowFulfillment = (request, response) => {
 
         db.get("SELECT question , options, answer FROM questions", (error, row) => {
          console.log(row.question +""+ row.options +""+ row.answer);
-       temp=row.question;
-       console.log(temp);
+       q=row.question;
+       console.log(q);
           });
-          agent.add(`first question coming from db is ${temp}`)
+          agent.add(`first question coming from db is ${q}`)
 
      
          agent.add("Okay Cool we are done with the first question your current score is noted!")
