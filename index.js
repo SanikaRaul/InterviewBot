@@ -41,6 +41,7 @@ const dialogflowFulfillment = (request, response) => {
     function apti1(agent)
     {
          const temp=agent.parameters.number;
+         const question="";
          if (temp==47)
          {
           result=result+1;
@@ -49,11 +50,12 @@ const dialogflowFulfillment = (request, response) => {
 
         db.get("SELECT question , options, answer FROM questions", (error, row) => {
          console.log(row.question +""+ row.options +""+ row.answer);
-           agent.add(`first question coming from db is ${row.question}`)
+           question=row.question;
+           console.log(question);
           });
           
 
-     
+         agent.add(` this is the first question from db ${question}`)
          agent.add("Okay Cool we are done with the first question your current score is noted!")
 
          agent.add("Okay so let us move on to the second question !!You are blindfolded and 10 coins are place in front of you on table. You are allowed to touch the coins, but can’t tell which way up they are by feel. You are told that there are 5 coins head up, and 5 coins tails up but not which ones are which.Can you make two piles of coins each with the same number of heads up? You can flip the coins any number of times. Please answer in Yes or No")
