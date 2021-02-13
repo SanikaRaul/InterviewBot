@@ -345,7 +345,7 @@ const dialogflowFulfillment = (request, response) => {
        agent.add("Now let me ask you few of the SQL related questions!")
        agent.add("Q)Which is not DDL (data definition language) operation")
        agent.add("A.Renaming a table\nB.SQL create table\nC.Add a column to an existing table\nD.Update data into a table in SQL database")
-
+       agent.add("Please Give answer in the format of A B C D")
 
 
        
