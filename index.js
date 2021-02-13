@@ -28,7 +28,8 @@ var fresult=0;
 var result=0;
 var lchoice="";
 var techresult=0;
-var q="";
+
+ var question="";
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
     
@@ -41,7 +42,7 @@ const dialogflowFulfillment = (request, response) => {
     function apti1(agent)
     {
          const temp=agent.parameters.number;
-         var question="";
+        
          if (temp==47)
          {
           result=result+1;
