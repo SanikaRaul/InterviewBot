@@ -45,12 +45,14 @@ const dialogflowFulfillment = (request, response) => {
          {
           result=result+1;
          }
-         db.all("SELECT question , options, answer FROM questions", (error, rows) => {
-                rows.forEach((row) => {
-                    console.log(row.question +""+ row.options +""+ row.answer);
-                     agent.add(`The first question coming from db is ${row.question}`);
-                })
-            });
+        
+
+        db.get("SELECT question , options, answer FROM questions", (error, row) => {
+         console.log(row.question +""+ row.options +""+ row.answer);
+       temp=row.question;
+       console.log(temp);
+          });
+          agent.add(`first question coming from db is ${temp}`)
 
      
          agent.add("Okay Cool we are done with the first question your current score is noted!")
