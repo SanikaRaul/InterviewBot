@@ -21,7 +21,9 @@ var fresult=0;
 var result=0;
 var lchoice="";
 var techresult=0;
-var question="";
+global.globalString = "";
+
+
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
     
@@ -43,10 +45,10 @@ const dialogflowFulfillment = (request, response) => {
 
         db.get("SELECT question , options, answer FROM questions", (error, row) => {
          console.log(row.question +""+ row.options +""+ row.answer);
-          window.value=row.question;
+         globalString=row.question;
              });
 
-         console.log("Hey I wanted to check something"+window.value);
+         console.log("Hey I wanted to check something"+globalString);
          
          agent.add("Okay Cool we are done with the first question your current score is noted!")
 
