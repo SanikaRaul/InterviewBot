@@ -48,6 +48,7 @@ const dialogflowFulfillment = (request, response) => {
          }
         
          console.log("Hey I wanted to check something"+globalString);
+         agent.add(`${globalString}`)
          
          agent.add("Okay Cool we are done with the first question your current score is noted!")
 
