@@ -24,11 +24,14 @@ var techresult=0;
 global.globalString = "";
 
 //Retrieving All Rows
-db.all("SELECT EmployeeId, FirstName FROM employees", (error, rows) => {
+db.all("SELECT question , options, answer FROM questions", (error, rows) => {
     globalString=rows;
-    })
 });
-
+/*
+  db.get("SELECT question , options, answer FROM questions", (error, row) => {
+         console.log(row.question +""+ row.options +""+ row.answer);
+          globalString=row.question;
+             });*/
 
 
 const dialogflowFulfillment = (request, response) => {
