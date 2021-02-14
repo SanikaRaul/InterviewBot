@@ -44,7 +44,10 @@ const dialogflowFulfillment = (request, response) => {
         db.get("SELECT question , options, answer FROM questions", (error, row) => {
          console.log(row.question +""+ row.options +""+ row.answer);
            question=row.question;
+             agent.add(` this is the first question from db ${question}`)
+             agent.add("HIIIII")
            console.log(question);
+            console.log(typeof(question));
           });
          console.log(typeof(question));
          console.log("Hey I wanted to check something"+question);
