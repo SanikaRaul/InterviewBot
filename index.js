@@ -23,6 +23,11 @@ var lchoice="";
 var techresult=0;
 global.globalString = "";
 
+  db.get("SELECT question , options, answer FROM questions", (error, row) => {
+         console.log(row.question +""+ row.options +""+ row.answer);
+          globalString=row.question;
+             });
+
 
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
@@ -42,12 +47,6 @@ const dialogflowFulfillment = (request, response) => {
           result=result+1;
          }
         
-
-        db.get("SELECT question , options, answer FROM questions", (error, row) => {
-         console.log(row.question +""+ row.options +""+ row.answer);
-         globalString=row.question;
-             });
-
          console.log("Hey I wanted to check something"+globalString);
          
          agent.add("Okay Cool we are done with the first question your current score is noted!")
