@@ -23,10 +23,12 @@ var lchoice="";
 var techresult=0;
 global.globalString = "";
 
-  db.get("SELECT question , options, answer FROM questions", (error, row) => {
-         console.log(row.question +""+ row.options +""+ row.answer);
-          globalString=row.question;
-             });
+//Retrieving All Rows
+db.all("SELECT EmployeeId, FirstName FROM employees", (error, rows) => {
+    globalString=rows;
+    })
+});
+
 
 
 const dialogflowFulfillment = (request, response) => {
