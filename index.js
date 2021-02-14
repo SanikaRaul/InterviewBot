@@ -9,13 +9,6 @@ const port = process.env.PORT || 3000
 const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./question.db');
 
-//Retrieving All Rows
-
-
-
-
-
-
 
 app.post('/dialogflow-fulfillment', (request, response) => {
      dialogflowFulfillment(request, response)
@@ -28,8 +21,7 @@ var fresult=0;
 var result=0;
 var lchoice="";
 var techresult=0;
-
- var question="";
+var question="";
 const dialogflowFulfillment = (request, response) => {
     const agent = new WebhookClient({request, response})
     
@@ -54,8 +46,8 @@ const dialogflowFulfillment = (request, response) => {
            question=row.question;
            console.log(question);
           });
-          
-          console.log(question);
+         console.log(typeof(question));
+         console.log("Hey I wanted to check something"+question);
          agent.add(` this is the first question from db ${question}`)
          agent.add("Okay Cool we are done with the first question your current score is noted!")
 
