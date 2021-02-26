@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\frontend\\front\\src",
+    "\\frontend\\front\\src\\app",
+    "\\frontend\\front\\src\\app\\home\\header",
+    "\\frontend\\front\\src\\app\\home\\home",
+    "\\frontend\\front\\src\\assets"
   ],
-  "SelectedNode": "\\index.js",
+  "SelectedNode": "\\frontend",
   "PreviewInSolutionExplorer": false
 }
