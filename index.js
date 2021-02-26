@@ -45,37 +45,39 @@ const dialogflowFulfillment = (request, response) => {
    
     function apti1(agent)
     {
-         const temp=agent.parameters.number;
+         const temp=agent.parameters.apt1;
         
-         if (temp==47)
+         if (temp=='c' || temp=='C')
          {
           result=result+1;
          }
         
-         console.log("Hey I wanted to check something"+globalString);
+         agent.add("Okay Cool we are done with the first question your current score is noted!")
+         agent.add("Aptitude Question 2")
          agent.add(`${globalString[0].question}`)
          agent.add(`${globalString[0].options}`)
-         agent.add(`${globalString[0].answer}`)
+         //agent.add(`${globalString[0].answer}`)
          
-         agent.add("Okay Cool we are done with the first question your current score is noted!")
-
-         agent.add("Okay so let us move on to the second question !!You are blindfolded and 10 coins are place in front of you on table. You are allowed to touch the coins, but can’t tell which way up they are by feel. You are told that there are 5 coins head up, and 5 coins tails up but not which ones are which.Can you make two piles of coins each with the same number of heads up? You can flip the coins any number of times. Please answer in Yes or No")
-        
+       
 	}
 
 
     function apti2(agent)
     {
          const apt2=agent.parameters.apti2;
-         if (apt2=='yes')
+         var ans2=globalString[0].answer;
+         console.log(ans2)
+         if (apt2==ans1)
          {
           result=result+1;
 	     }
      
          agent.add("Okay Cool we are done with the second question your current score is noted!")
+         agent.add("Aptitude Question 3")
+         agent.add(`${globalString[1].question}`)
+         agent.add(`${globalString[1].options}`)
 
-         agent.add("Okay so let us move on to the third question !!Fresh fruit contains 68% water and dry fruit contains 20% water. How much dry fruit can be obtained from 100 kg of fresh fruits ?")
-         agent.add(" Options are (A) 40 (B) 67 (C) 45 (D) 55")
+         
  
 	}
 
@@ -83,40 +85,50 @@ const dialogflowFulfillment = (request, response) => {
        function apti3(agent)
     {
          const apt3=agent.parameters.apti3;
-         if (apt3==40)
+         var ans3=globalString[1].answer;
+
+         if (apt3==ans3)
          {
           result=result+1;
          }
          agent.add("Okay Cool we are done with the third question your current score is noted!")
-         agent.add("Okay so let us move on to the forth question !! In the following question, one term in the number series is wrong. Find the wrong term.125, 126, 124, 127, 122, 128")
-
+         agent.add("Aptitude Question 4")
+         agent.add(`${globalString[2].question}`)
+         agent.add(`${globalString[2].options}`)
+         
   
 	}
 
         function apti4(agent)
     {
          const apt4=agent.parameters.apti4;
-         if (apt4==122)
+         var ans4=globalString[2].answer;
+         if (apt4==ans4)
          {
           result=result+1;
          }
-          agent.add("Okay Cool we are done with the forth question your current score is noted!")
-          agent.add("Okay so let us move on to the fifth question !! ")
-          agent.add(" All Lamels are Signots with buttons.No yellow Signots have buttons.No Lamels are yellow.If the first two statements are true, the third statement is True or False?")
-	
+         agent.add("Okay Cool we are done with the forth question your current score is noted!")
+         agent.add("Aptitude Question 5")
+         agent.add(`${globalString[3].question}`)
+         agent.add(`${globalString[3].options}`)
+          
    
 	}
 
       function apti5(agent)
     {
          const apt5=agent.parameters.apti5;
-         if (apt5=='True' || apt5=='true')
+          var ans5=globalString[3].answer;
+
+         if (apt5==ans5)
          {
           result=result+1;
          }
           agent.add("Okay Cool we are done with the fifth question your current score is noted!")
-          agent.add("Okay so let us move on to the sixth question !! ")
-          agent.add("What was the day on 15th august 1947?")
+         agent.add("Aptitude Question 6")
+         agent.add(`${globalString[4].question}`)
+         agent.add(`${globalString[4].options}`)
+          
      
 	}
      
@@ -125,7 +137,8 @@ const dialogflowFulfillment = (request, response) => {
     {
      
      const apt6=agent.parameters.apti6;
-      if (apt6=='Friday' || apt6=='friday')
+     var ans6=globalString[4].answer;
+      if (apt6==ans6)
          {
           result=result+1;
          }
