@@ -144,6 +144,82 @@ const dialogflowFulfillment = (request, response) => {
           result=result+1;
          }
 
+         agent.add("Okay Cool we are done with the sixth question your current score is noted!")
+         agent.add("Aptitude Question 7")
+         agent.add(`${globalString[5].question}`)
+         agent.add(`${globalString[5].options}`)
+
+    }
+
+
+    function apti7(agent)
+    {
+     
+     const apt7=agent.parameters.apti7;
+     var ans7=globalString[5].answer;
+      if (apt7==ans7)
+         {
+          result=result+1;
+         }
+
+         agent.add("Okay Cool we are done with the seventh question your current score is noted!")
+         agent.add("Aptitude Question 8")
+         agent.add(`${globalString[6].question}`)
+         agent.add(`${globalString[6].options}`)
+
+    }
+
+
+    
+    function apti8(agent)
+    {
+     
+     const apt8=agent.parameters.apti8;
+     var ans8=globalString[6].answer;
+      if (apt8==ans8)
+         {
+          result=result+1;
+         }
+
+         agent.add("Okay Cool we are done with the eightth question your current score is noted!")
+         agent.add("Aptitude Question 9")
+         agent.add(`${globalString[7].question}`)
+         agent.add(`${globalString[7].options}`)
+
+    }
+
+       
+    function apti9(agent)
+    {
+     
+     const apt9=agent.parameters.apti9;
+     var ans9=globalString[7].answer;
+      if (apt9==ans9)
+         {
+          result=result+1;
+         }
+
+         agent.add("Okay Cool we are done with the nineth question your current score is noted!")
+         agent.add("Aptitude Question 10")
+         agent.add(`${globalString[8].question}`)
+         agent.add(`${globalString[8].options}`)
+
+    }
+
+
+        function apti10(agent)
+    {
+     
+     const apt10=agent.parameters.apti10;
+     var ans10=globalString[8].answer;
+      if (apt10==ans10)
+         {
+          result=result+1;
+         }
+
+         agent.add("Okay Cool we are done with the tenth question your current score is noted!")
+
+
      var temp=parseInt((result/6)*100);
      var n = temp.toString();
      console.log(n)
@@ -160,8 +236,15 @@ const dialogflowFulfillment = (request, response) => {
      {
      agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'Tech' to get started with the Technical Round")
 	 }
-     result=0
+     //result=0
+   
+
     }
+
+
+
+         
+    
 
 
    function tech1(agent)
@@ -481,6 +564,10 @@ const dialogflowFulfillment = (request, response) => {
     intentMap.set("Aptitude4", apti4)
     intentMap.set("Aptitude5", apti5)
     intentMap.set("Aptitude6", apti6)
+    intentMap.set("Aptitude7", apti7)
+    intentMap.set("Aptitude8", apti8)
+    intentMap.set("Aptitude9", apti9)
+    intentMap.set("Aptitude10",apti10)
 
 
      intentMap.set("Technical1", tech1)
