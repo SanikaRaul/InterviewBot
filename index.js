@@ -200,27 +200,11 @@ const dialogflowFulfillment = (request, response) => {
          }
 
          agent.add("Okay Cool we are done with the nineth question your current score is noted!")
-         agent.add("Aptitude Question 10")
-         agent.add(`${globalString[8].question}`)
-         agent.add(`${globalString[8].options}`)
-
-    }
 
 
-        function apti10(agent)
-    {
-     
-     const apt10=agent.parameters.apti10;
-     var ans10=globalString[8].answer;
-      if (apt10==ans10)
-         {
-          result=result+1;
-         }
 
-         agent.add("Okay Cool we are done with the tenth question your current score is noted!")
-
-
-     var temp=parseInt((result/6)*100);
+         
+     var temp=parseInt((result/9)*100);
      var n = temp.toString();
      console.log(n)
      console.log(result)
@@ -236,11 +220,11 @@ const dialogflowFulfillment = (request, response) => {
      {
      agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'Tech' to get started with the Technical Round")
 	 }
-     //result=0
-   
-
+       
     }
 
+
+    
 
 
          
@@ -567,7 +551,7 @@ const dialogflowFulfillment = (request, response) => {
     intentMap.set("Aptitude7", apti7)
     intentMap.set("Aptitude8", apti8)
     intentMap.set("Aptitude9", apti9)
-    intentMap.set("Aptitude10",apti10)
+    
 
 
      intentMap.set("Technical1", tech1)
