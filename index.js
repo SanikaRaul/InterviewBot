@@ -66,8 +66,7 @@ const dialogflowFulfillment = (request, response) => {
     {
          const apt2=agent.parameters.apti2;
          var ans2=globalString[0].answer;
-         console.log(ans2)
-         console.log(type(ans2))
+        
          if (apt2==ans2)
          {
           result=result+1;
@@ -76,8 +75,7 @@ const dialogflowFulfillment = (request, response) => {
          agent.add("Okay Cool we are done with the second question your current score is noted!")
          agent.add("Aptitude Question 3")
          agent.add(`${globalString[1].question}`)
-         console.log(globalString[1].question)
-         console.log(globalString[1].options)
+         
          agent.add(`${globalString[1].options}`)
 
          
