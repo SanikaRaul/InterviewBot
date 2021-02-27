@@ -56,7 +56,7 @@ const dialogflowFulfillment = (request, response) => {
          agent.add("Aptitude Question 2")
          agent.add(`${globalString[0].question}`)
          agent.add(`${globalString[0].options}`)
-         //agent.add(`${globalString[0].answer}`)
+         
          
        
 	}
