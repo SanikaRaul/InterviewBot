@@ -68,13 +68,6 @@ db.all("SELECT question , options, answer FROM questions", (error, rows) => {
 
 
 
-app.post("/", function(req,res,body)
-{
- var fname=  req.body.firstName;
-   console.log(fname);
-       res.json(fname);
- 
-})
 
 
 
