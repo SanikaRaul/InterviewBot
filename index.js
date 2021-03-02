@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const {WebhookClient} = require('dialogflow-fulfillment');
 const app = express()
 app.use(bodyParser.json())
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 
 
@@ -19,11 +19,11 @@ app.use(express.static(path.join(__dirname , 'dist/frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
 const Format = require('./format.model.ts');
 app.listen(3000, function(req,res){
-    console.log("Port 3000 is running");
+    console.log("Port 5000 is running");
 })
 
 app.post("/", function(req,res,body){
- val fname=  req.body.firstName;
+ var fname=  req.body.firstName;
   console.log(fname);
 
   })
@@ -68,15 +68,13 @@ db.all("SELECT question , options, answer FROM questions", (error, rows) => {
 
 
 
-app.post("/", function(req,res,body){
+app.post("/", function(req,res,body)
+{
  var fname=  req.body.firstName;
-  console.log(fname);
-  //res.send(location);
-  
+   console.log(fname);
        res.json(fname);
- })
+ 
 })
-
 
 
 
@@ -473,7 +471,7 @@ const dialogflowFulfillment = (request, response) => {
        {
         techresult=techresult+1
 	   }
-       if (tech5 == "A" lchoice=="JAVA")
+       if (tech5 == "A" && lchoice=="JAVA")
        {
         techresult=techresult+1
 	   }
