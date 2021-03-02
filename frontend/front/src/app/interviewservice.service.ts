@@ -5,7 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import * as Rx from "rxjs/Rx";
 
-import { from, Observable, throwError } from 'rxjs';
+import { from,throwError } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { map, catchError } from 'rxjs/operators';
 
 
@@ -18,9 +19,10 @@ export class InterviewserviceService {
 
   constructor(private httpClient: HttpClient) {}
 
-  postVal(Format : any) : Observable <any> {
-    return this.httpClient.post<Format[]>('http://localhost:3000/', Format)
-    .pipe(catchError(this.httpmsg.handleError));
+  postVal(firstName : string) : Observable <any> {
+
+    return this.httpClient.post('http://localhost:3000/', firstName);
+    
   }
   
 }

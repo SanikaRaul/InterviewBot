@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl , FormGroup, Validators, FormBuilder} from '@angular/forms';
-import {InterviewserviceService} from '../interviewserviceservice.service';
+import {InterviewserviceService} from '../interviewservice.service';
+import {HttpClient} from '@angular/common/http';
+
+import { Observable } from 'rxjs/Observable';
 
 
 interface Lang {
@@ -26,7 +29,8 @@ interface Shell {
 })
 
 
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit
+{
 
   selectedLang: string;
   languages: Lang[] = [
@@ -93,20 +97,22 @@ export class DetailsComponent implements OnInit {
 
 
   
-onSubmit(studentData) {
+onSubmit(studentData)
+{
 
 console.log(this.studentData.value);
     console.log(this.firstName);
     console.log(studentData.controls['firstName'].value)
 
-    this.studentData.reset();
+    
     this.studentData.markAsUntouched();
     this.studentData.markAsPristine();
 
-  this.iservice.postVal(this.studentData.value).subscribe((response)=>{
+  this.iService.postVal(this.studentData.controls['firstName'].value).subscribe((response)=>{
     console.log(response);
-  }),
-  }  
+    this.studentData.reset();
+  })
+   
 }
 
 

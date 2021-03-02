@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home/home.component';
 import { HeaderComponent } from './home/header/header.component';
 import { DetailsComponent } from './details/details.component';
-import {InterviewserviceService} from './interviewserviceservice.service';
-
+import {InterviewserviceService} from './interviewservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 //angular material
 
@@ -52,7 +52,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     FormsModule,  
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule 
 
 
 

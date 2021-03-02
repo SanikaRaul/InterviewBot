@@ -8,11 +8,6 @@ const port = process.env.PORT || 3000
 
 
 
-
-
-
-
-
 const request = require("request");
 const cors = require("cors");
 const path = require('path');
@@ -20,7 +15,7 @@ const path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
-app.use(express.static(path.join(__dirname , 'frontend/front')));
+app.use(express.static(path.join(__dirname , 'dist/frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
 const Format = require('./format.model.ts');
 app.listen(3000, function(req,res){
@@ -28,8 +23,8 @@ app.listen(3000, function(req,res){
 })
 
 app.post("/", function(req,res,body){
- Format =  req.body.Format;
-  console.log(Format);
+ val fname=  req.body.firstName;
+  console.log(fname);
 
   })
 
@@ -69,6 +64,22 @@ global.globalString = "";
 db.all("SELECT question , options, answer FROM questions", (error, rows) => {
     globalString=rows;
 });
+
+
+
+
+app.post("/", function(req,res,body){
+ var fname=  req.body.firstName;
+  console.log(fname);
+  //res.send(location);
+  
+       res.json(fname);
+ })
+})
+
+
+
+
 /*
   db.get("SELECT question , options, answer FROM questions", (error, row) => {
          console.log(row.question +""+ row.options +""+ row.answer);
@@ -345,10 +356,10 @@ const dialogflowFulfillment = (request, response) => {
                     System.out.println(values[i]);  
                     Find the value of value[i]?
 `)
- agent.add(`10
-            11
-            15
-            None of the above`)
+ agent.add(`A) 10
+            B) 11
+            C) 15
+            D) None of the above`)
 	   }
        
    }
@@ -359,26 +370,26 @@ const dialogflowFulfillment = (request, response) => {
        const tech3=agent.parameters.tech3;
        tech3 = tech3.toUpperCase();
        agent.add("We are done with the second question!! Let us move on to the third question")
-       if (tech3 == "Error" ||  tech3 == "error")
+       if (tech3 == "C" && lchoice=="PYTHON")
        {
         techresult=techresult+1
 	   }
-        if (tech3 == "None of the above" )
+        if (tech3 == "D"  && lchoice=="JAVA")
        {
         techresult=techresult+1
 	   }
        
-        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+        if (lchoice=="PYTHON")
        {
         agent.add(" What will be the output of the following Python code?")
         agent.add(`x = [[0], [1]]
                    print(len(' '.join(list(map(str, x)))))`)
-        agent.add(` a) 2
-                    b) 3
-                    c) 7
-                    d) 8`)
+        agent.add(` A) 2
+                    B) 3
+                    C) 7
+                    D) 8`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
+         if (lchoice=="JAVA")
        {
        
         agent.add(` Predict the output of following Java Programs.
@@ -414,17 +425,18 @@ const dialogflowFulfillment = (request, response) => {
     function tech4(agent)
    {
        const tech4=agent.parameters.tech4;
+       tech4 = tech4.toUpperCase();
        agent.add("We are done with the third question!! Let us move on to the forth question")
-       if (tech4 == 7 ||  tech4 == 7)
+       if (tech4 == "C" && lchoice=="PYTHON")
        {
         techresult=techresult+1
 	   }
-       if (tech4 == 20)
+       if (tech4 == "A" && lchoice=="JAVA")
        {
         techresult=techresult+1
 	   }
        
-        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+        if (lchoice=="PYTHON")
        {
         agent.add(" What will be the output of the following Python code?")
         agent.add(`def func(x, ans):
@@ -438,11 +450,12 @@ const dialogflowFulfillment = (request, response) => {
                     c) 2
                     d) 3`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
+         if (lchoice=="JAVA")
        {
     
         agent.add("Multiple inheritances is not supported in case of class but it is supported in case of interface.")
-        agent.add("True or False?")
+        agent.add(`A ) True  
+                   B ) False?`)
 	   }
        
    }
@@ -454,17 +467,18 @@ const dialogflowFulfillment = (request, response) => {
     function tech5(agent)
    {
        const tech5=agent.parameters.tech5;
+       tech5 = tech5.toUpperCase();
        agent.add("We are done with the forth question!! Let us move on to the fifth question")
-       if (tech5 == 0)
+       if (tech5 == "A" && lchoice=="PYTHON")
        {
         techresult=techresult+1
 	   }
-       if (tech5 == "True" || tech5 == "true")
+       if (tech5 == "A" lchoice=="JAVA")
        {
         techresult=techresult+1
 	   }
        
-        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+        if (lchoice=="PYTHON")
        {
         agent.add(`How many keyword arguments can be passed to a function in a single function call?`)
         agent.add(` a) zero
@@ -472,7 +486,7 @@ const dialogflowFulfillment = (request, response) => {
                     c) one
                     d) one or more`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
+         if (lchoice=="JAVA")
        {
         agent.add("What is it called if an object has its own lifecycle and there is no owner?")
         agent.add(`a) Aggregation
@@ -487,23 +501,36 @@ const dialogflowFulfillment = (request, response) => {
    function tech6(agent)
    {
        const tech6=agent.parameters.tech6;
+       tech6 = tech6.toUpperCase();
        agent.add("We are done with the fifth question!! ")
-       if (tech6 == "zero or more")
+       if (tech6 == "B" && lchoice=="PYTHON")
        {
         techresult=techresult+1
 	   }
-       if (tech6 == "Association" ||  tech6 == "association")
+       if (tech6 == "D" && lchoice=="PYTHON")
        {
         techresult=techresult+1
 	   }
 
 
        agent.add("It was nice to inteview you regarding the language you are comfortable with!")
-       agent.add("Now let me ask you few of the SQL related questions!")
-       agent.add("Q)Which is not DDL (data definition language) operation")
-       agent.add("A.Renaming a table\nB.SQL create table\nC.Add a column to an existing table\nD.Update data into a table in SQL database")
-       agent.add("Please Give answer in the format of A B C D")
 
+     var temp=parseInt((techresult/6)*100);
+     var n = temp.toString();
+     console.log(n)
+     console.log(techresult)
+     agent.add(`Your Final score is ${n}`) 
+ 
+     if(temp<50)
+     {
+      agent.add("We are sorry to inform you that you didnt pass the technical section! Since your score is less than 50%")
+      agent.add("We suggest you to practice more and attempt the aptitude section again!")
+	 }
+     else
+     {
+     agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'Unix' to get started with the Unix")
+	 }
+     
 
        
    }
@@ -519,69 +546,9 @@ const dialogflowFulfillment = (request, response) => {
 
 
 
-   
-   function tech7(agent)
-   {
-       const tech7=agent.parameters.tech7;
-       agent.add("We are done with the sixth question!! Let us move on to the seventh question")
       
-       if (tech7 == "D" || tech7=="d")
-       {
-        techresult=techresult+1
-	   }
-      
-       agent.add("Q) Which statement is wrong about PRIMARY KEY constraint in SQL?")
-       agent.add("A.The PRIMARY KEY uniquely identifies each record in a SQL database table\nB.Primary key can be made based on multiple columns\nC.Primary key must be made of any single columns\nD.Primary keys must contain UNIQUE values.")
-  
-   }
 
-   
-   function tech8(agent)
-   {
-       const tech8=agent.parameters.tech8;
-       agent.add("We are done with the seventh question!! Let us move on to the eightth question")
-      
-       if (tech8 == "C" || tech8=="c")
-       {
-        techresult=techresult+1
-	   }
-      
-       agent.add("Q)  SQL Select statement to retrieve unique record from a table is")
-       agent.add("A.SELECT DISTINCT\nB.SELECT UNIQUE\nC.SELECT UNION\nD.SELECT UNION ALL")
   
-   }
-
-      
-   function tech9(agent)
-   {
-       const tech9=agent.parameters.tech9;
-       agent.add("We are done with the eighth question!! ")
-      
-       if (tech9 == "A" || tech9=="a")
-       {
-        techresult=techresult+1
-	   }
-      
-     var tem=parseInt((techresult/8)*100);
-     var t = tem.toString();
-     console.log(t)
-     console.log(techresult)
-     agent.add(`Your Final score is ${t}`)
- 
-     agent.add("So now you are done with the Technical Round!!")
-     if(tem<50)
-     {
-      agent.add("We are sorry to inform you that you didnt pass the Technical Round! Since your score is less than 50%")
-      agent.add("We suggest you to practice more and attempt the Technical Section again!")
-      techresult=0 
-	 }
-     else
-     {
-     agent.add("Congratulations You have scored more than 50% you are eligible  for the next round.Type 'HR' to get started with the HR Round")
-     techresult=0 
-	 }
-     
-   }
 
   
     
@@ -611,9 +578,8 @@ const dialogflowFulfillment = (request, response) => {
      intentMap.set("Technical4", tech4)
      intentMap.set("Technical5", tech5)
      intentMap.set("Technical6", tech6)
-     intentMap.set("Technical7", tech7)
-     intentMap.set("Technical8", tech8)
-     intentMap.set("Technical9", tech9)
+     
+     
      
     agent.handleRequest(intentMap)
 
