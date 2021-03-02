@@ -6,6 +6,47 @@ app.use(bodyParser.json())
 const port = process.env.PORT || 3000
 
 
+
+
+
+
+
+
+
+const request = require("request");
+const cors = require("cors");
+const path = require('path');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(cors());
+app.use(express.static(path.join(__dirname , 'frontend/front')));
+//app.use("/", express.static(path.join(__dirname, 'dist/mean')));
+const Format = require('./format.model.ts');
+app.listen(3000, function(req,res){
+    console.log("Port 3000 is running");
+})
+
+app.post("/", function(req,res,body){
+ Format =  req.body.Format;
+  console.log(Format);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./question.db');
 
@@ -23,6 +64,7 @@ var lchoice="";
 var techresult=0;
 global.globalString = "";
 
+
 //Retrieving All Rows
 db.all("SELECT question , options, answer FROM questions", (error, rows) => {
     globalString=rows;
@@ -32,6 +74,12 @@ db.all("SELECT question , options, answer FROM questions", (error, rows) => {
          console.log(row.question +""+ row.options +""+ row.answer);
           globalString=row.question;
              });*/
+
+
+             //nosql and SQL
+             //unix os
+             //datastructures low medium and difficult
+
 
 
 const dialogflowFulfillment = (request, response) => {
@@ -234,8 +282,9 @@ const dialogflowFulfillment = (request, response) => {
    function tech1(agent)
    {
        lchoice=agent.parameters.tech1;
+       lchoice = lchoice.toUpperCase();
        agent.add(`Okay cool!! Great to hear that you are interested in ${lchoice} .Let me ask you few questions related to ${lchoice}`)
-       if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+       if (lchoice=="PYTHON")
        {
         agent.add("What will be the output of the following Python code snippet?")
         agent.add(`def example(a):
@@ -248,13 +297,13 @@ const dialogflowFulfillment = (request, response) => {
                                 c) hello2
                                 d) hello2hello2`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
+         if (lchoice=="JAVA")
        {
         agent.add("In which process, a local variable has the same name as one of the instance variables?")
-        agent.add(` Serialization
-                    Variable Shadowing
-                    Abstraction
-                    Multi-threading`)
+        agent.add(` A) Serialization
+                    B) Variable Shadowing
+                    C) Abstraction
+                    D) Multi-threading`)
 	   }
        
    }
@@ -264,17 +313,18 @@ const dialogflowFulfillment = (request, response) => {
    function tech2(agent)
    {
        const tech2=agent.parameters.tech2;
+       tech2 = tech2.toUpperCase();
        agent.add("We are done with the first question!! Let us move on to the second question")
-       if (tech2 == "indentation Error")
+       if (tech2 == "A" && lchoice=="PYTHON")
        {
         techresult=techresult+1
 	   }
-        if (tech2 == "Variable Shadowing")
+        if (tech2 == "B" && lchoice=="JAVA" )
        {
         techresult=techresult+1
 	   }
        
-        if (lchoice=="Python" || lchoice=="python" ||lchoice=="PYTHON")
+        if (lchoice=="PYTHON")
        {
         agent.add(" What will be the output of the following Python code?")
         agent.add(`x = 'abcd'
@@ -285,7 +335,7 @@ const dialogflowFulfillment = (request, response) => {
                     c) error
                     d) none of the mentioned`)
 	   }
-         if (lchoice=="Java" || lchoice=="java" ||lchoice=="JAVA")
+         if (lchoice=="JAVA")
        {
    
         agent.add(`Given,
@@ -307,6 +357,7 @@ const dialogflowFulfillment = (request, response) => {
    function tech3(agent)
    {
        const tech3=agent.parameters.tech3;
+       tech3 = tech3.toUpperCase();
        agent.add("We are done with the second question!! Let us move on to the third question")
        if (tech3 == "Error" ||  tech3 == "error")
        {
