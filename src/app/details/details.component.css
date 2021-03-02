@@ -1,0 +1,17 @@
+/*mat-card{
+    margin-left: 30em;
+    margin-right: 30em;
+    text-align: center;
+    max-width: fit-content;
+    max-height: 700px;
+    height: fit-content;
+    width: fit-content;
+}*/
+.egcard{
+
+
+display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
