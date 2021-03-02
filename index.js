@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 app.use(express.static(path.join(__dirname , 'dist/frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
-const Format = require('./format.model.ts');
+
 app.listen(3000, function(req,res){
     console.log("Port 5000 is running");
 })
