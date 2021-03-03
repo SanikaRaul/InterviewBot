@@ -17,14 +17,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 app.use(express.static(path.join(__dirname , 'frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
-app.post("/", function(req,res,body){
-  data=req.body.firstName;
-  console.log(data);
-  res.end();
-
-  })
-
-
 
 
 const sqlite3 = require('sqlite3');
@@ -44,6 +36,13 @@ var lchoice="";
 var techresult=0;
 global.globalString = "";
 global.data="";
+
+app.post("/", function(req,res,body){
+  data=req.body.firstName;
+  console.log(data);
+  res.end();
+
+  })
 
 
 //Retrieving All Rows
