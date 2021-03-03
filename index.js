@@ -21,6 +21,13 @@ app.use(express.static(path.join(__dirname , 'frontend/front')));
 
 const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./question.db');
+global.data="";
+app.post("/", function(req,res,body){
+  data=req.body.firstName;
+  console.log(data);
+  res.end();
+
+  })
 
 
 app.post('/dialogflow-fulfillment', (request, response) => {
@@ -35,14 +42,9 @@ var result=0;
 var lchoice="";
 var techresult=0;
 global.globalString = "";
-global.data="";
 
-app.post("/", function(req,res,body){
-  data=req.body.firstName;
-  console.log(data);
-  res.end();
 
-  })
+
 
 
 //Retrieving All Rows
