@@ -103,15 +103,15 @@ onSubmit(studentData)
 console.log(this.studentData.value);
     console.log(this.firstName);
     console.log(studentData.controls['firstName'].value)
-
+    this.iService.postVal(this.studentData.value).subscribe((response)=>{
+    console.log(response);
     
+  })
+    this.studentData.reset();
     this.studentData.markAsUntouched();
     this.studentData.markAsPristine();
 
-  this.iService.postVal(this.studentData.controls['firstName'].value).subscribe((response)=>{
-    console.log(response);
-    this.studentData.reset();
-  })
+  
    
 }
 

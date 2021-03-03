@@ -15,7 +15,7 @@ const path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
-app.use(express.static(path.join(__dirname , 'dist/frontend/front')));
+app.use(express.static(path.join(__dirname , 'frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
 
 app.listen(3000, function(req,res){
@@ -23,8 +23,9 @@ app.listen(3000, function(req,res){
 })
 
 app.post("/", function(req,res,body){
- var fname=  req.body.firstName;
+  var fname=  req.body.firstName;
   console.log(fname);
+  res.end();
 
   })
 
