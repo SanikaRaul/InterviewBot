@@ -18,27 +18,6 @@ app.use(cors());
 app.use(express.static(path.join(__dirname , 'frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
 
-app.listen(3000, function(req,res){
-    console.log("Port 5000 is running");
-})
-
-app.post("/", function(req,res,body){
-  var fname=  req.body.firstName;
-  console.log(fname);
-  res.end();
-
-  })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -59,6 +38,7 @@ var result=0;
 var lchoice="";
 var techresult=0;
 global.globalString = "";
+global.data="";
 
 
 //Retrieving All Rows
@@ -66,6 +46,12 @@ db.all("SELECT question , options, answer FROM questions", (error, rows) => {
     globalString=rows;
 });
 
+app.post("/", function(req,res,body){
+  data=req.body.firstName;
+  console.log(data);
+  res.end();
+
+  })
 
 
 
@@ -107,6 +93,7 @@ const dialogflowFulfillment = (request, response) => {
          agent.add("Aptitude Question 2")
          agent.add(`${globalString[0].question}`)
          agent.add(`${globalString[0].options}`)
+          console.log(data)
          
          
        
