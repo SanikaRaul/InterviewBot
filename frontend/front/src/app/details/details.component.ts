@@ -33,6 +33,7 @@ export class DetailsComponent implements OnInit
 {
 
   selectedLang: string;
+  val : string;
   languages: Lang[] = [
     {value: 'python', viewValue: 'Python'},
     {value: 'java', viewValue: 'Java'},
@@ -104,7 +105,8 @@ console.log(this.studentData.value);
     console.log(this.firstName);
     console.log(studentData.controls['firstName'].value)
     this.iService.postVal(this.studentData.value).subscribe((response)=>{
-    console.log(response);
+    this.val = response;
+    console.log(this.val);
     
   })
     this.studentData.reset();

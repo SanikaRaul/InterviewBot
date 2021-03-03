@@ -17,7 +17,12 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 app.use(express.static(path.join(__dirname , 'frontend/front')));
 //app.use("/", express.static(path.join(__dirname, 'dist/mean')));
+app.post("/", function(req,res,body){
+  data=req.body.firstName;
+  console.log(data);
+  res.end();
 
+  })
 
 
 
@@ -46,12 +51,7 @@ db.all("SELECT question , options, answer FROM questions", (error, rows) => {
     globalString=rows;
 });
 
-app.post("/", function(req,res,body){
-  data=req.body.firstName;
-  console.log(data);
-  res.end();
 
-  })
 
 
 
