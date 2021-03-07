@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl , FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { Format } from '../format';
+import { Result } from '../result';
 import { IntService } from '../int.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -29,6 +30,7 @@ export class DetailsComponent implements OnInit {
 
   selectedLang: string;
   val : string;
+  Result:any;
   languages: Lang[] = [
     {value: 'python', viewValue: 'Python'},
     {value: 'java', viewValue: 'Java'},
@@ -70,9 +72,14 @@ export class DetailsComponent implements OnInit {
   onSubmit(studentData){
     console.log(this.studentData.value);
     console.log(this.lastName.value);
+    
     this.int.postVal(this.studentData.value).subscribe((response=>{
       this.val = response;
       console.log(this.val);
+
+      
+        
+      
 
       })
       //this.val = response;
@@ -80,8 +87,7 @@ export class DetailsComponent implements OnInit {
 
     this.studentData.reset();
     this.studentData.markAsUntouched();
-    this.studentData.markAsPristine();
-
+    
     
   }
   

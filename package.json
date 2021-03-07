@@ -21,6 +21,12 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
+    "angular-bootstrap-md": "^10.1.1",
+    "angular-google-charts": "^2.0.1",
+    "chart.js": "^2.9.4",
+    "chartjs": "^0.3.24",
+    "mdbootstrap": "^4.19.2",
+    "ng2-charts": "^2.4.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

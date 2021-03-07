@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Format } from './format';
 import { from, Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import * as Rx from "rxjs/Rx";
-
+import { Result } from './result';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +18,7 @@ export class IntService {
     return this.httpClient.post<Format[]>('http://localhost:5000', {firstName});
   }
 
-  
+  getResults() : Observable<Result[]> {
+    return this.httpClient.get<Result[]>('http://localhost:5000', {headers: this.headers});
+}
 }

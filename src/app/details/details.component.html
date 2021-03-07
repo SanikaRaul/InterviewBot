@@ -1,7 +1,11 @@
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutAlign="space-around center" class="egcard">
+<app-header></app-header>
+<br>
+
+<h3><i>Please provide us the following details for interview based on your skills!</i></h3>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="center"  class="egcard">
     <mat-card >
         <mat-card-header>
-            <mat-card-title>Please provide us the following details for interview based on your skills!</mat-card-title>
+            <mat-card-title>Interview Pre-requisite</mat-card-title>
         </mat-card-header>
 <mat-card-content>
 <form [formGroup]="studentData" (ngSubmit)="onSubmit(studentData)">
