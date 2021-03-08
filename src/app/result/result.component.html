@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 
-<div class="chartjs-container">
+<div *ngIf="velu" class="chartjs-container">
     <canvas baseChart 
         [datasets]="lineChartData" 
         [labels]="lineChartLabels" 

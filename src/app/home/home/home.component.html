@@ -1,10 +1,32 @@
 <app-header></app-header>
 <br><br>
-<div class="jumbotron jumbotron-fluid ">
-  <div class="container">
-    <h1 class="display-4"><b><font size="15px">Interview Bot</font></b></h1>
-    <br>
-    <p class="lead"><i>Explore your Interview Skills</i></p>
-  </div>
-</div>
+
+<h1 style="text-align:center; "><b><i>Interview Bot  </i> </b><mat-icon>face</mat-icon><i> has some tips for you :</i></h1>
+ 
+  
+  <mat-carousel
+  timings="200ms ease-in"
+  [autoplay]="true"
+  interval="3000"
+  color="primary"
+  maxWidth="100%"
+  slideHeight="600px"
+  proportion="25"
+  slides="5"
+  [loop]="true"
+  [hideArrows]="false"
+  [hideIndicators]="false"
+  [useKeyboard]="true"
+  [useMouseWheel]="false"
+  [maintainAspectRatio]="false"
+  orientation="ltr"
+>
+  <mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide.image"
+    overlayColor="#00000040"
+    [hideOverlay]="false"
+  ></mat-carousel-slide>
+</mat-carousel>
 <br>

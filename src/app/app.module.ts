@@ -19,6 +19,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
+// For MDB Angular Free
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { GoogleChartsModule} from 'angular-google-charts';
 import { ChartsModule } from 'ng2-charts';
 
@@ -61,7 +64,10 @@ import { ResultComponent } from './result/result.component';
     HttpClientModule,
     MDBBootstrapModule,
     GoogleChartsModule,
-    ChartsModule
+    ChartsModule,
+    CarouselModule,
+    WavesModule,
+    MatCarouselModule.forRoot()
 
     
     
