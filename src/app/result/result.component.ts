@@ -12,61 +12,96 @@ import { Color, Label } from 'ng2-charts';
 })
 export class ResultComponent implements OnInit {
 
-  velu:any;
+  public velu:any;
   
   constructor(private int:IntService ) { }
 
+ lineChartData: ChartDataSets[];
+ lineChartLabels: Label[];
+ lineChartOptions: ChartOptions;
+ lineChartColors: Color[];
+ lineChartLegend:boolean;
+ barChartType:any;
+ lineChartPlugins:any;
+ /*
+
+  data: Data[];  
+  Player = [];  
+  Run = [];  
+  Linechart = [];  
+ */
+
+
   ngOnInit(): void {
-    
-    this.int
+    }
+
+
+
+    clickFunction()
+
+    {
+
+      this.int
     .getResults()
     .subscribe((result) => {
       this.velu = result,
-      //this.fr=this.Result;
-      //JSON.stringify(this.Times);
+    console.log(this.velu);
       
-      console.log(this.velu);})
-    }
-    
+    console.log("hi");
+
+
+    this.lineChartData= [
+      { data: [this.velu[0],this.velu[1],20,20,20,20,20], label: 'Interview Performance' }
+    ];
+    this.lineChartLabels= ['Aptitude','DS','shell','DS'];
+  
+    // Define chart options
+    this.lineChartOptions = {
+      responsive: true
+    };
+  
+    // Define colors of chart segments
+    this.lineChartColors = [
+  
+      { // red
+        backgroundColor: 'rgba(250,0,0,0.3)',
+        borderColor: 'red',
+      }
+    ];
+  
+    // Set true to show legends
+    this.lineChartLegend = true;
+  
+    // Define type of chart
+    this.barChartType = 'bar';
+  
+    this.lineChartPlugins = [];
   
 
-  // Array of different segments in chart
-  lineChartData: ChartDataSets[] = [
-    { data: [this.velu,20,20,20,20,20,20], label: 'Product A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Product B' }
-  ];
+    });
 
-  //Labels shown on the x-axis
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-  // Define chart options
-  lineChartOptions: ChartOptions = {
-    responsive: true
-  };
 
-  // Define colors of chart segments
-  lineChartColors: Color[] = [
 
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-    },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-    }
-  ];
+    
 
-  // Set true to show legends
-  lineChartLegend = true;
+    
 
-  // Define type of chart
-  barChartType = 'bar';
+  
 
-  lineChartPlugins = [];
+    
 
+      
+  }
+}
+
+
+    
  
 
 
 
-}
+
+    
+      
+  
