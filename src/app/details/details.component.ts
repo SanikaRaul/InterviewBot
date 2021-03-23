@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl , FormGroup, Validators, FormBuilder} from '@angular/forms';
 import { Format } from '../format';
 import { Result } from '../result';
+import {fireworks } from 'fireworks';
+
 import { IntService } from '../int.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -111,4 +113,5 @@ export class DetailsComponent implements OnInit {
     return this.studentData.controls['dslevel'];
 
   }
+  
 }

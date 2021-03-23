@@ -1,0 +1,57 @@
+.mat-grid-list
+{
+
+padding:80px;
+height: 400;
+
+}
+:host {
+  display: block;
+  border: 1px solid black;
+}
+.dim
+{
+  padding:60px;
+  
+  width:70%;
+  height:600px;
+   position: relative;
+  left: 200px;
+  
+}
+.mat-divider
+{
+  color:black;
+}
+
+.content {
+    padding: 16px;
+}
+
+.container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+padding-right: 100px;
+padding-left: 200px;
+}
+.arrow{
+    align-self: center;
+    padding-right: 60px;
+    font-size: 100px;
+}
+.container-mat-card{
+    max-width: 200px;
+    max-height: 200px;
+}
+.container-mat-card-img{
+    background-size: cover;
+}
+mat-card{
+    max-width: 250px;
+}
+.container h1,h1{
+    font-size: xx-large;
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

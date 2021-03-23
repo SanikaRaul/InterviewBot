@@ -1,8 +1,8 @@
 <app-header></app-header>
 <br><br>
 
-<h1 style="text-align:center; "><b><i>Interview Bot  </i> </b><mat-icon>face</mat-icon><i> has some tips for you :</i></h1>
- 
+<h1 >Interview Bot  <mat-icon>face</mat-icon> has some tips for you :</h1>
+ <br>
   
   <mat-carousel
   timings="200ms ease-in"
@@ -29,4 +29,38 @@
     [hideOverlay]="false"
   ></mat-carousel-slide>
 </mat-carousel>
-<br>
+<div class="container">
+  <h1>Steps for the interview process are:</h1>
+  <br>
+<div fxLayout="row wrap" fxLayoutGap="30px">
+  <mat-card>
+   <mat-card-title>STEP 1</mat-card-title>
+    <mat-card-content>
+      <img mat-card-img src="./assets/det.jfif">
+      <br>
+      <p><i>Fill the form in "Interview Pre-requisite"</i></p>
+    </mat-card-content>
+  </mat-card> 
+  <mat-icon class="arrow" aria-hidden="false" >arrow_forward</mat-icon>
+  <mat-card>
+    <mat-card-title>STEP 2</mat-card-title>
+     <mat-card-content>
+       <img mat-card-img src="./assets/step2.png">
+       <br>
+      <p><i>Click on "Start interview" to start with aptitude & technical tests</i></p>
+
+     </mat-card-content>
+   </mat-card> 
+  <mat-icon class="arrow" aria-hidden="false" >arrow_forward</mat-icon>
+
+   <mat-card>
+    <mat-card-title>STEP 3</mat-card-title>
+     <mat-card-content>
+       <img mat-card-img src="./assets/resu.png">
+       <br>
+      <p><i>To check your performace, click on "result" section.</i></p>
+
+     </mat-card-content>
+   </mat-card>  
+</div>
+</div>
