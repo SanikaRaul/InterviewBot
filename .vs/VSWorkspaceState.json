@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\frontend"
+    "\\frontend",
+    "\\frontend\\front",
+    "\\frontend\\front\\src",
+    "\\frontend\\front\\src\\app",
+    "\\frontend\\front\\src\\app\\home",
+    "\\frontend\\front\\src\\app\\home\\header",
+    "\\frontend\\front\\src\\app\\result",
+    "\\frontend\\front\\src\\app\\startinterview",
+    "\\frontend\\front\\src\\assets"
   ],
-  "SelectedNode": "\\index.js",
+  "SelectedNode": "\\frontend\\front\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }

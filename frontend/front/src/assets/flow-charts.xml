@@ -1,0 +1,61 @@
+<mxGraphModel dx="1042" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0.195;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="5" target="7" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="The order" style="shape=mxgraph.flowchart.document;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="410" y="200" width="98" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="6" target="15" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="file display repository" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="190" y="300" width="70" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="7" target="15" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="&lt;br&gt;Enter the&amp;nbsp;&lt;br&gt;Software&lt;br&gt;" style="shape=mxgraph.flowchart.manual_input;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="410" y="300" width="98" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" value="Display when entering" style="shape=mxgraph.flowchart.display;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="600" y="340" width="98" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="11" target="15" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="customer file" style="shape=mxgraph.flowchart.database;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="190" y="430" width="70" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="order file" style="shape=mxgraph.flowchart.stored_data;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="320" y="570" width="96" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.78;entryY=0.5;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="13" target="14" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="Order processed" style="shape=mxgraph.flowchart.document;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="512" y="570" width="98" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="N" style="shape=mxgraph.flowchart.extract_or_measurement;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;rotation=-180;" parent="1" vertex="1">
+      <mxGeometry x="710" y="580" width="66" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="15" target="12" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryPerimeter=0;jettySize=auto;orthogonalLoop=1;" parent="1" source="15" target="13" edge="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="15" target="8" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="649" y="425"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="15" value="Update orders" style="shape=mxgraph.flowchart.process;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2" parent="1" vertex="1">
+      <mxGeometry x="387" y="400" width="144" height="50" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

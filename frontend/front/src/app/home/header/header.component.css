@@ -21,6 +21,12 @@ mat-toolbar
 
 display: flex;
 
+background-color: transparent;
 
-
+}
+.stickyBar {
+  position: sticky;
+  top: 0;
+  opacity: 0.9;
+  
 }

@@ -8,8 +8,22 @@ import { HeaderComponent } from './home/header/header.component';
 import { DetailsComponent } from './details/details.component';
 import {InterviewserviceService} from './interviewservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 //angular material
+
+
+
+//angular material
+
+
+
+
+
+
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,6 +33,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
+// For MDB Angular Free
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { GoogleChartsModule} from 'angular-google-charts';
+import { ChartsModule } from 'ng2-charts';
+
+import { MDBBootstrapModule} from 'angular-bootstrap-md';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,15 +49,22 @@ import {MatListModule} from '@angular/material/list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ResultComponent } from './result/result.component';
+import { StartinterviewComponent } from './startinterview/startinterview.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    DetailsComponent
+    DetailsComponent,
+    ResultComponent,
+    StartinterviewComponent
   ],
   imports: [
-    BrowserModule,
+
+
+  BrowserModule,
     AppRoutingModule,
     MatInputModule,
     MatButtonModule,
@@ -53,12 +81,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,  
     MatListModule,
     BrowserAnimationsModule,
-    HttpClientModule 
-
-
-
-
-
+    HttpClientModule,
+    MDBBootstrapModule,
+    GoogleChartsModule,
+    ChartsModule,
+    CarouselModule,
+    WavesModule,
+    MatGridListModule,
+    FlexLayoutModule,
+    MatCarouselModule.forRoot()
 
   ],
   providers: [InterviewserviceService],

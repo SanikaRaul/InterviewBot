@@ -1,0 +1,79 @@
+
+<div class="header">
+  <h1>Results</h1>
+  <p>Analysis of your performance</p>
+  <button class="but"(click)="clickFunction()">Get your results</button>
+</div>
+
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+
+  <div style="display: block; ">
+  <canvas baseChart 
+    [data]="pieChartData" 
+    [labels]="pieChartLabels" 
+    [chartType]="pieChartType"
+    [options]="pieChartOptions"
+    [plugins]="pieChartPlugins"
+    [legend]="pieChartLegend">
+  </canvas>
+</div>
+
+
+
+
+
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+  <div style="display: block;">
+  <canvas  
+  baseChart  
+    [data]="pieChartDatadb" 
+    [labels]="pieChartLabeldb" 
+    [chartType]="pieChartTypedb"
+    [options]="pieChartOptionsdb"
+    [plugins]="pieChartPluginsdb"
+    [legend]="pieChartLegenddb">
+  </canvas>
+</div>
+
+
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+
+  <div style="display: block;">
+  <canvas baseChart 
+    [data]="pieChartDataunix" 
+    [labels]="pieChartLabelunix" 
+    [chartType]="pieChartTypeunix"
+    [options]="pieChartOptionsunix"
+    [plugins]="pieChartPluginsunix"
+    [legend]="pieChartLegendunix">
+  </canvas>
+</div>
+
+
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+  <div style="display: block;">
+  <canvas baseChart 
+    [data]="pieChartDatads" 
+    [labels]="pieChartLabelds" 
+    [chartType]="pieChartTypeds"
+    [options]="pieChartOptionsds"
+    [plugins]="pieChartPluginsds"
+    [legend]="pieChartLegendds">
+  </canvas>
+</div>
+
+
+
+  </mat-grid-tile>
+</mat-grid-list>
